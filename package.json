@@ -1,10 +1,10 @@
 {
   "name": "dyna-tiny-url-service",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "The dyna-tiny-url-service",
   "repository": {
     "type": "git",
-    "url": "http://github.com/YOUR_ACCOUNT/dyna-tiny-url-service"
+    "url": "http://github.com/aneldev/dyna-tiny-url-service"
   },
   "sideEffects": false,
   "source": "src/index.ts",
