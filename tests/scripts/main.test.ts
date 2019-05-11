@@ -56,6 +56,7 @@ describe('DynaTinyUrlService', () => {
     })
       .then(reply => {
         console.log('shorten url:', reply.data.tinyUrl);
+        console.log('qr barcode:', reply.data.qrBarcode);
         expect(reply.data.tinyUrl.length).toBeLessThan(40);
         expect(reply.data.tinyUrl.indexOf('http://tinyurl.com/')).toBe(0);
       })

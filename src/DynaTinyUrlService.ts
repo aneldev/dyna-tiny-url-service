@@ -29,6 +29,7 @@ export interface ICOMMAND_TinyURL_Get_Data {
 export const COMMAND_TinyURL_Response = "COMMAND_TinyURL_Response";
 export interface ICOMMAND_TinyURL_Response_Data {
   tinyUrl: string;
+  qrBarcode: string; // qr barcode image with the tiny url
 }
 
 export class DynaTinyUrlService {
@@ -58,13 +59,29 @@ export class DynaTinyUrlService {
           execute: ({ message, reply, next }) => {
             const { data: { url } } = message;
 
-            http.get('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url), res => {
+            if (!url) {
+              reply<IError, null, null, null>({
+                command: "error",
+                args: { status: 422, message: "The url is not provided" },
+                data: null,
+              })
+                .catch(error => {
+                  console.error('DynaTinyUrlService: Cannot reply to client 3rd party error', error);
+                });
+              next();
+              return; // exit
+            }
+
+            http.get(`http://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`, res => {
               res.on('data', chunk => {
                 const tinyUrl = chunk.toString();
                 reply<null, ICOMMAND_TinyURL_Response_Data, null, null>({
                   command: COMMAND_TinyURL_Response,
                   args: null,
-                  data: { tinyUrl },
+                  data: {
+                    tinyUrl,
+                    qrBarcode: `http://api.qrserver.com/v1/create-qr-code/?data=${escape(tinyUrl)}&format=svg`,
+                  },
                 })
                   .catch(error => {
                     console.error('DynaTinyUrlService: Cannot reply to client the tiny url', error);
@@ -74,11 +91,7 @@ export class DynaTinyUrlService {
             }).on("error", (error) => {
               reply<IError, null, null, null>({
                 command: "error",
-                args: {
-                  status: 503,
-                  message: "The 3rd party service failed",
-                  error,
-                },
+                args: { status: 503, message: "The 3rd party service failed", error },
                 data: null,
               })
                 .catch(error => {
