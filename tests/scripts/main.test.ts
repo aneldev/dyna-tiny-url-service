@@ -51,7 +51,7 @@ describe('DynaTinyUrlService', () => {
       command: COMMAND_TinyURL_Get,
       args: null,
       data: {
-        url: 'http://www.anel.co/example/long/pathlong/pathlong/pathlong/pathlong/pathlong/pathlong/pathlong/path',
+        url: 'http://www.anel.co/example/long/path/long/path/long/path/long/path/long/path/long/path/long/path/long/path',
       }
     })
       .then(reply => {

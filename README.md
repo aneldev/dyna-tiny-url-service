@@ -39,11 +39,12 @@ Dyna Node Service that makes a URL tiny using the tinyurl.com api.
       command: COMMAND_TinyURL_Get,
       args: null,
       data: {
-        url: 'http://www.anel.co/example/long/pathlong/pathlong/pathlong/pathlong/pathlong/pathlong/pathlong/path',
+        url: 'http://www.anel.co/example/long/path/long/path/long/path/long/path/long/path/long/path/long/path/long/path',
       }
     })
       .then(reply => {
         console.log('shorten url:', reply.data.tinyUrl);
+        console.log('qr barcode:', reply.data.qrBarcode);
       });
 
 ```
