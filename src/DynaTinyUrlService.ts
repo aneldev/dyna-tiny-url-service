@@ -89,13 +89,18 @@ export class DynaTinyUrlService {
                 next();
               });
             }).on("error", (error) => {
-              reply<IError, null, null, null>({
-                command: "error",
-                args: { status: 503, message: "The 3rd party service failed", error },
-                data: null,
+              console.error('TinyUrl 3rd party service failed', error);
+              // The 3rd party failed but we can return the original url to do not the break the process.
+              reply<null, ICOMMAND_TinyURL_Response_Data, null, null>({
+                command: COMMAND_TinyURL_Response,
+                args: null,
+                data: {
+                  tinyUrl: url,
+                  qrBarcode: `http://api.qrserver.com/v1/create-qr-code/?data=${escape(url)}&format=svg`,
+                },
               })
                 .catch(error => {
-                  console.error('DynaTinyUrlService: Cannot reply to client 3rd party error', error);
+                  console.error('DynaTinyUrlService: Cannot reply to client the tiny url', error);
                 });
             });
 
