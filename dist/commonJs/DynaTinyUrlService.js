@@ -30,7 +30,7 @@ var DynaTinyUrlService = /** @class */ (function () {
             },
             onCommand: (_a = {},
                 _a[exports.COMMAND_TinyURL_Get] = {
-                    executionTimeout: 5000,
+                    executionTimeout: 10000,
                     execute: function (_a) {
                         var message = _a.message, reply = _a.reply, next = _a.next;
                         var url = message.data.url;
