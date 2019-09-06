@@ -55,7 +55,7 @@ export class DynaTinyUrlService {
       },
       onCommand: {
         [COMMAND_TinyURL_Get]: {
-          executionTimeout: 10000,
+          executionTimeout: 20000,
           execute: ({ message, reply, next }) => {
             const { data: { url } } = message;
 
