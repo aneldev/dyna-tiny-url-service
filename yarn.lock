@@ -3071,10 +3071,10 @@ dyna-node-fs@^1.0.2:
   dependencies:
     dyna-interfaces "^4.0.0"
 
-dyna-node@^0.7.18:
-  version "0.7.21"
-  resolved "https://registry.yarnpkg.com/dyna-node/-/dyna-node-0.7.21.tgz#fe06096d19b6a22ae574bbde4dcfbd859d129a85"
-  integrity sha512-dXV16705ICSq4DRPcs78O8+EN+7PP55VJJbSsSwmHYiNLy7m/1U6L7w/iNzJqAE3eC1qr2y43DdwGZpg85vi6Q==
+dyna-node@^0.7.52:
+  version "0.7.52"
+  resolved "https://registry.yarnpkg.com/dyna-node/-/dyna-node-0.7.52.tgz#67f78b4da9a6c102f1c77040b2cb49bab101c7d4"
+  integrity sha512-o/KjqcFIQRKWobp3ABJpFisK03YfNw6x9Uwizatte9h1wTvlR8YuflR0Ycb2JrzDW5oemVFIf5bIk/JD/SB6xA==
   dependencies:
     dyna-crypt "^1.1.1"
     dyna-guid "^1.0.8"

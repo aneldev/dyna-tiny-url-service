@@ -13,7 +13,6 @@ import {DynaDiskMemory} from "dyna-disk-memory/dist/commonJs/node";
 import * as os from "os";
 
 export interface IDynaTinyUrlServiceConfig {
-  name?: string;
   serverDynaNodeAddress: string;
   serviceConnectionId: string;
   encryptionKey: string;
@@ -38,7 +37,6 @@ export class DynaTinyUrlService {
 
   constructor(private readonly config: IDynaTinyUrlServiceConfig) {
     this.service = new DynaNodeService({
-      name: config.name,
       compressMessages: true,
       serviceRegistration: {
         serverDynaNodeAddress: config.serverDynaNodeAddress,
@@ -53,6 +51,9 @@ export class DynaTinyUrlService {
         del: (key) => this.memory.get('dturls', key),
         delAll: () => this.memory.delContainer('dturls'),
       },
+      publicCommands: [
+        COMMAND_TinyURL_Get,
+      ],
       onCommand: {
         [COMMAND_TinyURL_Get]: {
           executionTimeout: 20000,
