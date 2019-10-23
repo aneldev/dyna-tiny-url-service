@@ -1,5 +1,4 @@
 export interface IDynaTinyUrlServiceConfig {
-    name?: string;
     serverDynaNodeAddress: string;
     serviceConnectionId: string;
     encryptionKey: string;

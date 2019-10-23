@@ -13,7 +13,6 @@ var DynaTinyUrlService = /** @class */ (function () {
         this.config = config;
         this.memory = new node_2.DynaDiskMemory({ diskPath: os.tmpdir() + "/dyna-tiny-url-disk" });
         this.service = new node_1.DynaNodeService({
-            name: config.name,
             compressMessages: true,
             serviceRegistration: {
                 serverDynaNodeAddress: config.serverDynaNodeAddress,
@@ -28,6 +27,9 @@ var DynaTinyUrlService = /** @class */ (function () {
                 del: function (key) { return _this.memory.get('dturls', key); },
                 delAll: function () { return _this.memory.delContainer('dturls'); },
             },
+            publicCommands: [
+                exports.COMMAND_TinyURL_Get,
+            ],
             onCommand: (_a = {},
                 _a[exports.COMMAND_TinyURL_Get] = {
                     executionTimeout: 20000,
