@@ -108,7 +108,6 @@ export class DynaTinyUrlService {
           },
         } as IDynaNodeServiceCommandConfig<null, ICOMMAND_TinyURL_Get_Data>
       },
-      onReplySendFail: (message: DynaNodeMessage, error: any, retry: () => void, skip: () => void, stop: () => void) => skip(),
       onServiceRegistrationFail: error => console.error('DynaTinyUrlService cannot register as service', error),
       onMessageQueueError: error => console.error('DynaTinyUrlService error on service queue (disk error?)', error),
     });

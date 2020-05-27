@@ -35,7 +35,6 @@ describe('DynaTinyUrlService', () => {
     await server.start();
 
     const service = new DynaTinyUrlService({
-      name: "Dyna Tiny URL Service",
       serverDynaNodeAddress: 'n/localhost/57206',
       serviceConnectionId: 'dyna-tiny-url',
       encryptionKey: 'encryptionKey',
@@ -64,7 +63,7 @@ describe('DynaTinyUrlService', () => {
         console.error('TEST: cannot send the get message', error);
       })
       .then(async () => {
-        await client.closeAllConnections();
+        await client.stopConnections();
         await service.stop();
         await server.stop();
         done();

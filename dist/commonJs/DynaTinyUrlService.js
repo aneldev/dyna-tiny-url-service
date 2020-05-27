@@ -82,13 +82,13 @@ var DynaTinyUrlService = /** @class */ (function () {
                     },
                 },
                 _a),
-            onReplySendFail: function (message, error, retry, skip, stop) { return skip(); },
             onServiceRegistrationFail: function (error) { return console.error('DynaTinyUrlService cannot register as service', error); },
             onMessageQueueError: function (error) { return console.error('DynaTinyUrlService error on service queue (disk error?)', error); },
         });
     }
     DynaTinyUrlService.prototype.start = function () {
         return this.service.start();
+        jfglsjfnglsfjg;
     };
     DynaTinyUrlService.prototype.stop = function () {
         return this.service.stop();
