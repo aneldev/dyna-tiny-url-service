@@ -1393,15 +1393,6 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-polyfill@^6.9.1:
-  version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
-  integrity sha1-N5k3q8Z9eJWXCtxiHyhM2WbPIVM=
-  dependencies:
-    babel-runtime "^6.26.0"
-    core-js "^2.5.0"
-    regenerator-runtime "^0.10.5"
-
 babel-preset-jest@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-20.0.3.tgz#cbacaadecb5d689ca1e1de1360ebfc66862c178a"
@@ -3042,15 +3033,15 @@ dyna-interfaces@^4.0.0, dyna-interfaces@^4.0.6, dyna-interfaces@^4.0.9:
   resolved "https://registry.yarnpkg.com/dyna-interfaces/-/dyna-interfaces-4.0.9.tgz#3e4fce0b2a688f09e7c96595582af5760c368b83"
   integrity sha512-uxeqd77izOTLLDnI0anEme3LkY3zzUo+B1rynkOvI9+ewjG6lYBRFdvn4MlO8BEVPKpbAl7fWdwVK1O0EaB46g==
 
-dyna-job-queue@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/dyna-job-queue/-/dyna-job-queue-3.1.2.tgz#0d8e68bc23ff314b8e347e5818f6c772b46dc948"
-  integrity sha512-uTqRbWLWK2irCmb6e8gaeoiSIfDDJ62pMTA/DgcI4DNeVHkIY59ES6HB1M8iZ+Cypjnp6hJKwA/os8hNDCIJUw==
-
 dyna-job-queue@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/dyna-job-queue/-/dyna-job-queue-4.0.1.tgz#eff572424e6ed78d244e8d8040f4adcf189d7b2b"
   integrity sha512-Z6pdx0UzHgIDg6Mqyt+of5t/HoCHPyoO6yvZry5RWdwLOkeG/drCUgSx22aW+hCqKjzaMv4HQjfe4PdmNqpWXg==
+
+dyna-job-queue@^5.1.1:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/dyna-job-queue/-/dyna-job-queue-5.1.2.tgz#cccf8801cfa3fd8bfde6ea0495fa594cf1f75ef4"
+  integrity sha512-zgVV4cPToBz4ZLvOdsD6ZbuKP7fjV4ATAIJEKQLPWG8LD0LjumCCgGQ9rXe++S9F2FjbxuIQGSmcIE7r48ZexQ==
 
 dyna-loops@^1.4.3, dyna-loops@^1.7.2:
   version "1.7.2"
@@ -3071,44 +3062,51 @@ dyna-node-fs@^1.0.2:
   dependencies:
     dyna-interfaces "^4.0.0"
 
-dyna-node@^0.7.52:
-  version "0.7.52"
-  resolved "https://registry.yarnpkg.com/dyna-node/-/dyna-node-0.7.52.tgz#67f78b4da9a6c102f1c77040b2cb49bab101c7d4"
-  integrity sha512-o/KjqcFIQRKWobp3ABJpFisK03YfNw6x9Uwizatte9h1wTvlR8YuflR0Ycb2JrzDW5oemVFIf5bIk/JD/SB6xA==
+dyna-node@^0.7.96:
+  version "0.7.96"
+  resolved "https://registry.yarnpkg.com/dyna-node/-/dyna-node-0.7.96.tgz#282d06f07dd7aade35f06c68eee91cf958040267"
+  integrity sha512-/ntvIPPbTIY+KyNMrtQsbCUuIMHp30UZ0SA73u11uoJHM57+7JZpxR3UDFcr2YeC6h60WUgbSZt0efYRdutwOg==
   dependencies:
     dyna-crypt "^1.1.1"
+    dyna-disk-memory "^4.0.3"
     dyna-guid "^1.0.8"
     dyna-interfaces "^4.0.6"
+    dyna-job-queue "^5.1.1"
     dyna-loops "^1.7.2"
-    dyna-object-assign "^1.0.4"
-    dyna-queue-handler "^6.0.1"
-    dyna-retry "^1.2.6"
+    dyna-object-assign "^2.0.4"
+    dyna-queue-handler "^6.0.6"
+    dyna-retry "^2.1.0"
+    dyna-stringify "^1.0.3"
     dyna-timeout "^1.0.22"
-    engine.io "^3.2.0"
-    engine.io-client "^3.2.1"
+    engine.io "3.2.0"
+    engine.io-client "3.2.0"
 
-dyna-object-assign@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/dyna-object-assign/-/dyna-object-assign-1.0.4.tgz#73400a51c950888c16b5c7e6aa61436a123fce9c"
-  integrity sha512-XAkKMPWnTupRUhuDWNaGSk9Hnxlp/ODhQ500aIuV9CUo+Mu/QkI2S8hxJJceIt8Ev9oJ4rCQpb7LNee3y4pHQg==
+dyna-object-assign@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/dyna-object-assign/-/dyna-object-assign-2.0.4.tgz#2523ab77e5132f0f261b423d526a5f2e98845507"
+  integrity sha512-Z9Jzi1YGymGsjuf7lu/f+ndM29dc8+bJCUVmBnwzDW7VflCrmKW/w1QFylu+teDhdnXmDh/O3+PZkHSRAKAhWA==
 
-dyna-queue-handler@^6.0.1:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/dyna-queue-handler/-/dyna-queue-handler-6.0.2.tgz#095326d05db108d3bea44ec31a9cef777597db12"
-  integrity sha512-qrjIDio8XcmpK1ZvsoKYpacWj6DJBhojLKzJmykXnWSpS3GGgawM6wsKu/NH/dAHQNGK/UJE7JNgLfCtivghNw==
+dyna-queue-handler@^6.0.6:
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/dyna-queue-handler/-/dyna-queue-handler-6.0.6.tgz#287d9b70a2e40f2e687d7fac60bbebaeb0477b43"
+  integrity sha512-bHF8RZemgU1h3ZQ6BmSJGsZ222fmGs9HsXtOeXL00HXjysFcgQbHe9vL9Kds8l1OiaYdl/8Gq15OHlOWgco88g==
   dependencies:
     dyna-debounce "^2.0.1"
     dyna-guid "^1.0.8"
     dyna-interfaces "^4.0.6"
-    dyna-job-queue "^3.1.2"
+    dyna-job-queue "^5.1.1"
 
-dyna-retry@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/dyna-retry/-/dyna-retry-1.2.6.tgz#5d95034b7af740ac0136d006c413e6bce8e6b630"
-  integrity sha512-Ym1tfYbo21SzBdnw+MKl1rreUWXcupFU3abxsjDJIJh2oOzj49g5CjzMqIKhTRfGLW/EjbPU1uA8UZhUd5zajw==
+dyna-retry@^2.1.0:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/dyna-retry/-/dyna-retry-2.1.3.tgz#c2e848c9f47c94c0fdcd8ecc60cda4d5d3696ef0"
+  integrity sha512-77WO9dxdQ2CSl15M8cZB86H2rKyubxAXVRKum6BL3fZ+yMedo0+TA3hhU0spH6VypsT7qmrc169+NyUHQZFacg==
   dependencies:
-    babel-polyfill "^6.9.1"
     dyna-loops "^1.4.3"
+
+dyna-stringify@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dyna-stringify/-/dyna-stringify-1.0.3.tgz#9566e449f5e3e3976fa2c17f3ffcb2e205151233"
+  integrity sha512-HKURdVbc8+PoPvxMTddtNr/tOFZaGQFUDpTMHs1JEnTeDmuR+X/fkeVelMvPOMl4eocgdzhC1x1tQ8oplKDFAA==
 
 dyna-timeout@^1.0.22:
   version "1.0.22"
@@ -3173,10 +3171,10 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-engine.io-client@^3.2.1:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-3.3.2.tgz#04e068798d75beda14375a264bb3d742d7bc33aa"
-  integrity sha512-y0CPINnhMvPuwtqXfsGuWE8BB66+B6wTtCofQDRecMQPYX3MYUZXFNKDhdrSe3EVjgOu4V3rxdeqN/Tr91IgbQ==
+engine.io-client@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-3.2.0.tgz#3e34fdb8b3d72901eeaf73f7e591d5612749c5d7"
+  integrity sha512-AeoIj1QYv0OhJjus85Z+rwpNE3RSjOWpP1qrfBCYES3PbootLFYaSTKwimacX86OVlUE80cfFciWImS+jDQXJQ==
   dependencies:
     component-emitter "1.2.1"
     component-inherit "0.0.3"
@@ -3186,7 +3184,7 @@ engine.io-client@^3.2.1:
     indexof "0.0.1"
     parseqs "0.0.5"
     parseuri "0.0.5"
-    ws "~6.1.0"
+    ws "~3.3.1"
     xmlhttprequest-ssl "~1.5.4"
     yeast "0.1.2"
 
@@ -3201,17 +3199,17 @@ engine.io-parser@~2.1.0, engine.io-parser@~2.1.1:
     blob "0.0.5"
     has-binary2 "~1.0.2"
 
-engine.io@^3.2.0:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-3.3.2.tgz#18cbc8b6f36e9461c5c0f81df2b830de16058a59"
-  integrity sha512-AsaA9KG7cWPXWHp5FvHdDWY3AMWeZ8x+2pUVLcn71qE5AtAzgGbxuclOytygskw8XGmiQafTmnI9Bix3uihu2w==
+engine.io@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-3.2.0.tgz#54332506f42f2edc71690d2f2a42349359f3bf7d"
+  integrity sha512-mRbgmAtQ4GAlKwuPnnAvXXwdPhEx+jkc0OBCLrXuD/CRvwNK3AxRSnqK4FSqmAMRRHryVJP8TopOvmEaA64fKw==
   dependencies:
     accepts "~1.3.4"
     base64id "1.0.0"
     cookie "0.3.1"
     debug "~3.1.0"
     engine.io-parser "~2.1.0"
-    ws "~6.1.0"
+    ws "~3.3.1"
 
 enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
   version "4.1.0"
@@ -7761,11 +7759,6 @@ regenerate@^1.4.0:
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
 
-regenerator-runtime@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
-  integrity sha1-M2w+/BIgrc7dosn6tntaeVWjNlg=
-
 regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
@@ -9031,6 +9024,11 @@ uglify-js@^3.1.4:
     commander "~2.20.0"
     source-map "~0.6.1"
 
+ultron@~1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ultron/-/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
+  integrity sha512-UIEXBNeYmKptWH6z8ZnqTeS8fV74zG0/eRU9VGkpzz+LIJNs8W/zM/L+7ctCkRrgbNnnR0xxw4bKOr0cW0N0Og==
+
 unbzip2-stream@^1.0.9:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/unbzip2-stream/-/unbzip2-stream-1.3.3.tgz#d156d205e670d8d8c393e1c02ebd506422873f6a"
@@ -9610,12 +9608,14 @@ ws@^5.2.0:
   dependencies:
     async-limiter "~1.0.0"
 
-ws@~6.1.0:
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-6.1.4.tgz#5b5c8800afab925e94ccb29d153c8d02c1776ef9"
-  integrity sha512-eqZfL+NE/YQc1/ZynhojeV8q+H050oR8AZ2uIev7RU10svA9ZnJUddHcOUZTJLinZ9yEfdA2kSATS2qZK5fhJA==
+ws@~3.3.1:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
+  integrity sha512-nnWLa/NwZSt4KQJu51MYlCcSQ5g7INpOrOMt4XV8j4dqTXdmlUmSHQ8/oLC069ckre0fRsgfvsKwbTdtKLCDkA==
   dependencies:
     async-limiter "~1.0.0"
+    safe-buffer "~5.1.0"
+    ultron "~1.1.0"
 
 xdg-basedir@^3.0.0:
   version "3.0.0"
