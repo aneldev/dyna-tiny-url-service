@@ -1,18 +1,16 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var http = require("http");
-var node_1 = require("dyna-node/dist/commonJs/node");
-var node_2 = require("dyna-disk-memory/dist/commonJs/node");
-var os = require("os");
-exports.COMMAND_TinyURL_Get = "COMMAND_TinyURL_Get";
-exports.COMMAND_TinyURL_Response = "COMMAND_TinyURL_Response";
+import * as http from "http";
+import { DynaNodeService, } from "dyna-node/dist/commonJs/node";
+import { DynaDiskMemory } from "dyna-disk-memory/dist/commonJs/node";
+import * as os from "os";
+export var COMMAND_TinyURL_Get = "COMMAND_TinyURL_Get";
+export var COMMAND_TinyURL_Response = "COMMAND_TinyURL_Response";
 var DynaTinyUrlService = /** @class */ (function () {
     function DynaTinyUrlService(config) {
         var _this = this;
         var _a;
         this.config = config;
-        this.memory = new node_2.DynaDiskMemory({ diskPath: os.tmpdir() + "/dyna-tiny-url-disk" });
-        this.service = new node_1.DynaNodeService({
+        this.memory = new DynaDiskMemory({ diskPath: os.tmpdir() + "/dyna-tiny-url-disk" });
+        this.service = new DynaNodeService({
             compressMessages: true,
             serviceRegistration: {
                 serverDynaNodeAddress: config.serverDynaNodeAddress,
@@ -28,10 +26,10 @@ var DynaTinyUrlService = /** @class */ (function () {
                 delAll: function () { return _this.memory.delContainer('dturls'); },
             },
             publicCommands: [
-                exports.COMMAND_TinyURL_Get,
+                COMMAND_TinyURL_Get,
             ],
             onCommand: (_a = {},
-                _a[exports.COMMAND_TinyURL_Get] = {
+                _a[COMMAND_TinyURL_Get] = {
                     executionTimeout: 20000,
                     execute: function (_a) {
                         var message = _a.message, reply = _a.reply, next = _a.next;
@@ -52,7 +50,7 @@ var DynaTinyUrlService = /** @class */ (function () {
                             res.on('data', function (chunk) {
                                 var tinyUrl = chunk.toString();
                                 reply({
-                                    command: exports.COMMAND_TinyURL_Response,
+                                    command: COMMAND_TinyURL_Response,
                                     args: null,
                                     data: {
                                         tinyUrl: tinyUrl,
@@ -68,7 +66,7 @@ var DynaTinyUrlService = /** @class */ (function () {
                             console.error('TinyUrl 3rd party service failed', error);
                             // The 3rd party failed but we can return the original url to do not the break the process.
                             reply({
-                                command: exports.COMMAND_TinyURL_Response,
+                                command: COMMAND_TinyURL_Response,
                                 args: null,
                                 data: {
                                     tinyUrl: url,
@@ -94,5 +92,5 @@ var DynaTinyUrlService = /** @class */ (function () {
     };
     return DynaTinyUrlService;
 }());
-exports.DynaTinyUrlService = DynaTinyUrlService;
+export { DynaTinyUrlService };
 //# sourceMappingURL=DynaTinyUrlService.js.map
