@@ -3349,6 +3349,11 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+dyna-count@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/dyna-count/-/dyna-count-1.0.1.tgz#5a79ce7e7afafd476f24ae17e60478e5cf90f636"
+  integrity sha512-CoUPk1inHMY9tLjbDQqU8Ay/yNEDCBP4vWLlOs86DJTwZMythuncE4AW41auImXBGyZnKpFiT7R/B4tys6pnlg==
+
 dyna-crypt@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/dyna-crypt/-/dyna-crypt-1.1.1.tgz#01c939b5e461e7818cedbac40b5f270fe98a5325"
@@ -3412,11 +3417,12 @@ dyna-node-fs@^1.0.2, dyna-node-fs@^1.0.4:
   dependencies:
     dyna-interfaces "^4.0.0"
 
-dyna-node@^0.7.97:
-  version "0.7.97"
-  resolved "https://registry.yarnpkg.com/dyna-node/-/dyna-node-0.7.97.tgz#6a3a34ff601fd820845914d2fa7080ef0c4bdaa4"
-  integrity sha512-3H2WB300lkufua3pmAYuuE5FLQyTfIkmxN8r0Nwgp9hS8FObskR3naAuzdlgEqfG3fxTQuik/QpBuK/7e9YvwA==
+dyna-node@^0.7.98:
+  version "0.7.98"
+  resolved "https://registry.yarnpkg.com/dyna-node/-/dyna-node-0.7.98.tgz#0f75d332685184d912ae424ebf459bd0f85cdb45"
+  integrity sha512-zKhqr1ved1Txut/Ody/QILDlkfeYuqbmN2L9h5LH7Xbv3ZcC6B0isQ+xdujETtnj4SsPe7Sg3oZHcgjleD114Q==
   dependencies:
+    dyna-count "^1.0.1"
     dyna-crypt "^1.1.1"
     dyna-disk-memory "^4.0.3"
     dyna-guid "^1.0.8"
