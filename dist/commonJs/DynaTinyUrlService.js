@@ -8,8 +8,8 @@ exports.COMMAND_TinyURL_Get = "COMMAND_TinyURL_Get";
 exports.COMMAND_TinyURL_Response = "COMMAND_TinyURL_Response";
 var DynaTinyUrlService = /** @class */ (function () {
     function DynaTinyUrlService(config) {
-        var _this = this;
         var _a;
+        var _this = this;
         this.config = config;
         this.memory = new node_2.DynaDiskMemory({ diskPath: os.tmpdir() + "/dyna-tiny-url-disk" });
         this.service = new node_1.DynaNodeService({
